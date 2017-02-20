@@ -7,7 +7,7 @@
     "build": "webpack",
     "watch": "webpack --watch",
     "serve": "webpack-dev-server",
-    "start": "webpack"
+    "start": "npm run build"
   },
   "repository": {
     "type": "git",

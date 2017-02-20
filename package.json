@@ -8,7 +8,7 @@
     "watch": "webpack --watch",
     "serve": "webpack-dev-server",
     "server": "node src/client/server/index.js",
-    "start": "npm run build"
+    "start": "npm run build && npm run server"
   },
   "repository": {
     "type": "git",

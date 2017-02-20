@@ -1,0 +1,169 @@
+.html, body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.transition {
+  -webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+h1 {
+  font-size: 100px;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+.fold {
+  background-image: url('/images/table.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.fold-overlay {
+  background-color: rgba(20,20,20, .5);
+  height: 100%;
+}
+
+.carousel-item {
+  height: 600px;
+}
+
+.carousel-item-one {
+  background-image: url("https://s3.amazonaws.com/futurefresh/lettuce-tomato.jpg");
+}
+.carousel-item-two {
+  background-image: url("https://s3.amazonaws.com/futurefresh/lettuce-dish.jpg");
+}
+.carousel-item-three {
+  background-image: url("https://s3.amazonaws.com/futurefresh/salad-oil.jpeg");
+}
+
+.d-block {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.frame-two {
+  height: 100px;
+  margin: 30px 0 30px 0;
+  text-align: center;
+}
+
+.frame-two-content {
+  margin-top: 70px;
+}
+
+.space {
+  text-align: center;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  padding: 0 !important;
+}
+
+.space-school {
+  background-image: url("https://s3.amazonaws.com/futurefresh/school.jpg");
+}
+
+.space:hover .space-overlay {
+  background-color: rgba(220,220,220, .95);
+}
+
+.space-city {
+  background-image: url("https://s3.amazonaws.com/futurefresh/city.jpg");
+}
+
+.space-restaurant {
+  background-image: url("https://s3.amazonaws.com/futurefresh/restaurant.jpeg");
+}
+
+.space-overlay {
+  background-color: rgba(20,20,20, .5);
+  height: 100%;
+}
+
+.frame-three {
+  background-image: url("https://s3.amazonaws.com/futurefresh/tomato.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  height: 800px;
+}
+
+.frame-three-title {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.ethics {
+  margin-top: 80px;
+}
+
+.ethic {
+  text-align: center;
+}
+
+.ethic-content {
+  margin-top: 30px;
+}
+
+.ethic-content>h6{
+  text-align: justify;
+}
+
+.frame-four {
+  height: 500px;
+}
+
+.media {
+  background: -webkit-linear-gradient(right top, rgba(41,42,59,.75), rgba(24,25,36,.99));
+  background: -o-linear-gradient(bottom left, rgba(41,42,59,.75), rgba(24,25,36,.99));
+  background: -moz-linear-gradient(bottom left, rgba(41,42,59,.75), rgba(24,25,36,.99));
+  background: linear-gradient(to bottom left, rgba(41,42,59,.75), rgba(24,25,36,.99));
+}
+
+.media-header {
+  color: rgba(240,240,240,.90);
+}
+
+.media-content {
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-60%);
+  text-align: center;
+}
+
+.media-content>i {
+  color: rgba(240,240,240,.90);
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.social-media {
+  height: 500px;
+  margin: 0 auto;
+  overflow: scroll;
+}
+
+.footer {
+  height: 80px;
+  text-align: center;
+}
+
+.footer>h6{
+  margin-top: 50px;
+}
+
+.footer>p {
+  font-size: 12px;
+}

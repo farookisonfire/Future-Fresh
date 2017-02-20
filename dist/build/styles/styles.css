@@ -15,6 +15,12 @@ h1 {
   font-weight: 200;
 }
 
+h2 {
+  font-size: 60px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
 .fold {
   background-image: url('/images/table.jpg');
   background-size: cover;
@@ -92,6 +98,15 @@ h1 {
   height: 100%;
 }
 
+.space-overlay>h3 {
+  color: white;
+  font-size: 48px;
+  font-weight: 200;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .frame-three {
   background-image: url("https://s3.amazonaws.com/futurefresh/tomato.jpeg");
   background-size: cover;
@@ -118,6 +133,7 @@ h1 {
 
 .ethic-content>h6{
   text-align: justify;
+  font-weight: 300;
 }
 
 .frame-four {

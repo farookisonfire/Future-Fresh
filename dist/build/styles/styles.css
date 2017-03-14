@@ -9,6 +9,11 @@
 	transition: all .3s ease-in-out;
 }
 
+.ff-logo {
+  max-width: 70px;
+  margin: 0px 8px;
+}
+
 h1 {
   font-size: 100px;
   text-transform: uppercase;
@@ -45,7 +50,12 @@ h2 {
 .carousel-item-three {
   background-image: url("https://s3.amazonaws.com/futurefresh/salad-oil.jpeg");
 }
-
+.carousel-item-four {
+  background-image: url("https://s3.amazonaws.com/futurefresh/carrot-kale.jpg");
+}
+.carousel-item-five {
+  background-image: url("https://s3.amazonaws.com/futurefresh/greenwall.jpg");
+}
 .d-block {
   width: 100%;
   background-size: cover;

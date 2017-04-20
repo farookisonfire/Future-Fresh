@@ -1,4 +1,5 @@
-const stripe = require("stripe")("sk_test_qdkgru5QBQHPHo3MxG4jdfeL");
+const secret = process.env.STRIPE_SECRET_KEY || "sk_test_qdkgru5QBQHPHo3MxG4jdfeL";
+const stripe = require("stripe")(secret);
 const express = require('express');
 
 const router = express.Router()
@@ -8,20 +9,33 @@ router.post('/', handleCharge)
 module.exports = router;
 
 function handleCharge(req, res) {
-  const token = req.body.stripeToken;
+  
+  const { name, email, membership } = req.body.customerDetails;
+  const token = req.body.token.stripeToken;
+  const chargeAmount = calculateCharge(membership);
+  
   const charge = stripe.charges.create({
-    amount: 1000,
+    // amount: chargeAmount,
+    amount: 50,
     currency: "usd",
-    description: "Future Fresh Farms membership charge",
+    description: `New Membership: ${membership}`,
+    metadata: { name: name, email: email },
     source: token
+    
   }, function(err, charge){
     if(err){console.log(err)}
-    else {console.log(charge)}
+    else {console.log("Charge Succesful", charge)}
   })
-
   res.status(200)
 }
 
+function calculateCharge(membership) {
+    if(membership === "basic") {
+      return 1250;
+    } else if (membership === "premium") {
+      return 1750;
+    }
+  }
 
 // Set your secret key: remember to change this to your live secret key in production
 // See your keys here: https://dashboard.stripe.com/account/apikeys

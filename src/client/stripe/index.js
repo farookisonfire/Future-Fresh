@@ -1,4 +1,4 @@
-var stripe = Stripe('pk_test_xktdrRvlBcGpcD23iHeJAJfp');
+var stripe = Stripe('pk_live_ApEOv2BHUibXh2elxfbSkiLJ');
 var elements = stripe.elements();
 
 var card = elements.create('card', {
@@ -51,14 +51,21 @@ function setOutcome(result) {
   errorElement.classList.remove('visible');
 
   if (result.token) {
-    // Use the token to create a charge or a customer
-    // https://stripe.com/docs/charges
-    console.log('this is the whole result', result)
-    const stripeToken = JSON.stringify({stripeToken:result.token.id})
+
+    var form = document.querySelector('form');
+    var customerDetails = {
+      name: form.querySelector('input[name=cardholder-name]').value,
+      email: form.querySelector('input[name=cardholder-email]').value,
+      membership: document.getElementById('member-basic').checked ? "basic" : "premium"
+    };
+
+    const token = {stripeToken: result.token.id}
+    const payload = JSON.stringify({ customerDetails, token })
+
     fetch('/charge', {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: stripeToken
+      body: payload
     })
     successElement.querySelector('.token').textContent = "Payment Successful"
     successElement.classList.add('visible');
@@ -74,12 +81,5 @@ card.on('change', function(event) {
 
 document.querySelector('form').addEventListener('submit', function(e) {
   e.preventDefault();
-  var form = document.querySelector('form');
-  var extraDetails = {
-    name: form.querySelector('input[name=cardholder-name]').value,
-    email: form.querySelector('input[name=cardholder-email]').value,
-    membership: document.getElementById('member-basic').checked ? "basic" : "premium"
-  };
-  console.log('extra details', extraDetails)
-  stripe.createToken(card, extraDetails).then(setOutcome);
+  stripe.createToken(card).then(setOutcome);
 });

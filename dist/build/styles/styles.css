@@ -182,8 +182,10 @@ h2 {
 }
 
 .footer {
-  height: 80px;
   text-align: center;
+  background-color: rgb(247,247,247);
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .footer>h6{
@@ -192,4 +194,30 @@ h2 {
 
 .footer>p {
   font-size: 12px;
+}
+
+.membership {
+  text-align: center;
+}
+
+.membership-field {
+  background: transparent;
+  font-weight: 300;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  line-height: 32px;
+  padding-bottom: 3px;
+  transition: opacity 200ms ease-in-out;
+}
+
+.member-label {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.radial-right {
+  margin-left: 20px;
 }

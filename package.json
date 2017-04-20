@@ -7,7 +7,8 @@
     "build": "webpack",
     "watch": "webpack --watch",
     "serve": "webpack-dev-server",
-    "server": "nodemon --exec node src/server/index.js",
+    "watch:server": "nodemon --exec node src/server/index.js",
+    "server": "node src/server/index.js",
     "start": "npm run build && npm run server"
   },
   "repository": {

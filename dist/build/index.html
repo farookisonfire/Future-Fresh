@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>Future Fresh</title>
-  <meta charset="utf-8">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400" rel="stylesheet">
-  <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="/styles/styles.css"/>
+    <title>Future Fresh</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="/styles/stripe.css"/>
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
   </head>
   <body>
 
@@ -169,9 +171,41 @@
   </div>
 </div>
 
+<div class="stripe-container col-xs-12">
+  <form action="/charge" method="post" id="payment-form">
+    <h2 class="membership-title">Membership</h2>
+    <label class="membership">
+      <p>Select Your Preferred Membership Level</p>
+      <input id="member-basic" type="radio" name="plan" value="basic" class="membership-field">
+      <label for="member-basic" class="membership-field member-label">Basic ($12.50)</label>
+      <input id="member-premium" type="radio" name="plan" value="premium" class="membership-field radial-right">
+      <label for="member-premium" class="membership-field member-label">Premium ($17.50)</label>
+    </label>
+    <label>
+      <input name="cardholder-name" class="field is-empty" placeholder="Jane Doe" />
+      <span><span>Name</span></span>
+    </label>
+    <label>
+      <input name="cardholder-email" class="field is-empty" type="email" placeholder="jane.doe@gmail.com" />
+      <span><span>Email</span></span>
+    </label>
+    <label>
+      <div id="card-element" class="field is-empty"></div>
+      <span><span>Card</span></span>
+    </label>
+    <button type="submit">Become A Member</button>
+    <div class="outcome">
+      <div class="error" ></div>
+      <div class="success">
+        <span class="token"></span>
+      </div>
+    </div>
+  </form>
+</div>
+
 <!-- footer -->
 
-  <div class="container footer">
+  <div class="container-fluid footer col-xs-12">
     <h6>FUTURE|FRESH|FARMS</h6>
     <p>© 2017 Future Fresh Farms. All Rights Reserved.</p>
   </div>

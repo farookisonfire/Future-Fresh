@@ -1,4 +1,5 @@
-const secret = process.env.STRIPE_SECRET_KEY || "sk_test_qdkgru5QBQHPHo3MxG4jdfeL";
+const secret = process.env.STRIPE_SECRET_KEY || 'sk_test_ABwmJVUE2uGS6vip3b5kepdf';
+
 const stripe = require("stripe")(secret);
 const express = require('express');
 

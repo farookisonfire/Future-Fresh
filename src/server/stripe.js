@@ -24,7 +24,7 @@ function handleCharge(req, res) {
     source: token
     
   }, function(err, charge){
-    if(err){console.log(err)}
+    if(err){res.send(err)}
     else {console.log("Charge Succesful", charge)}
   })
   res.status(200)

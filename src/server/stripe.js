@@ -22,10 +22,12 @@ function handleCharge(req, res) {
     return stripe.charges.create({
       amount: 50,
       currency: "usd",
-      cusstomer: customer.id
+      customer: customer.id
     });
   }).then(function(charge){
-    res.status(200).send
+    res.status(200).send(charge);
+  }).catch(function(err){
+    res.send(err);
   })
 }
 

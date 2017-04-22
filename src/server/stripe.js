@@ -15,19 +15,19 @@ function handleCharge(req, res) {
   const token = req.body.token.stripeToken;
   const chargeAmount = calculateCharge(membership);
   
-stripe.customers.create({
-  email: email,
-  source: token
-}).then(function(customer){
-  return stripe.charges.create({
-    amount: 50,
-    currency: "usd",
-    cusstomer: customer.id
-  });
-}).then(function(charge){
-  res.status(200).send(charge)
-})
-
+  stripe.customers.create({
+    email: email,
+    source: token
+  }).then(function(customer){
+    return stripe.charges.create({
+      amount: 50,
+      currency: "usd",
+      cusstomer: customer.id
+    });
+  }).then(function(charge){
+    res.status(200).send
+  })
+}
 
 
 

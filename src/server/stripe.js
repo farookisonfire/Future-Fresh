@@ -15,22 +15,39 @@ function handleCharge(req, res) {
   const token = req.body.token.stripeToken;
   const chargeAmount = calculateCharge(membership);
   
-  const charge = stripe.charges.create({
-    // amount: chargeAmount,
+stripe.customers.create({
+  email: email,
+  source: token
+}).then(function(customer){
+  return stripe.charges.create({
     amount: 50,
     currency: "usd",
-    description: `New Membership: ${membership}`,
-    metadata: { name: name, email: email },
-    source: token
+    cusstomer: customer.id
+  });
+}).then(function(charge){
+  res.status(200).send(charge)
+})
+
+
+
+
+
+//   const charge = stripe.charges.create({
+//     // amount: chargeAmount,
+//     amount: 50,
+//     currency: "usd",
+//     description: `New Membership: ${membership}`,
+//     metadata: { name: name, email: email },
+//     source: token
     
-  }, function(err, charge){
-    if(err){res.send(err)}
-    else {
-      console.log("Charge Succesful", charge)
-      res.status(200)
-    }
-  })
-}
+//   }, function(err, charge){
+//     if(err){res.send(err)}
+//     else {
+//       console.log("Charge Succesful", charge)
+//       res.status(200)
+//     }
+//   })
+// }
 
 function calculateCharge(membership) {
     if(membership === "basic") {

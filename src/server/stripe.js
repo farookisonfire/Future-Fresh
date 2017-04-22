@@ -25,9 +25,11 @@ function handleCharge(req, res) {
     
   }, function(err, charge){
     if(err){res.send(err)}
-    else {console.log("Charge Succesful", charge)}
+    else {
+      console.log("Charge Succesful", charge)
+      res.status(200)
+    }
   })
-  res.status(200)
 }
 
 function calculateCharge(membership) {

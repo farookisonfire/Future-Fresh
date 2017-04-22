@@ -61,6 +61,8 @@ function setOutcome(result) {
 
     const token = {stripeToken: result.token.id}
     const payload = JSON.stringify({ customerDetails, token })
+    console.log('this is the token', token.stripeToken)
+    console.log('this is the payload', payload.token.stripeToken)
 
     fetch('/charge', {
       method: "POST",
